@@ -8,7 +8,7 @@ export const inject = async (fullPath: string) => {
 
    const indexString = await Deno.readTextFile(fullPath)
    const endOfBody = indexString.indexOf('</body>')
-   // mahe sure we got an end tag
+   // make sure we have an end tag
    if (endOfBody > 5) {
       // just replace this tag with our script tag content
       const newBody = indexString.replace('</body>', `
