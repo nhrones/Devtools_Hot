@@ -1,6 +1,6 @@
 /// <reference lib="dom" />
              
-/** our counter */
+/** our counter  */
 let cnt = 1;
 
 const logger = document.getElementById('logger') as HTMLPreElement;

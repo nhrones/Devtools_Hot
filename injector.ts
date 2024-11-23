@@ -45,9 +45,8 @@ const hotSocket = () => {
             parent.appendChild(elem)
          }
       } else if (action === "reload") {
-         console.log("Reload requested!")
-         // deno-lint-ignore no-window
-         window.location.reload()
+         console.log("Reload requested! ")
+         globalThis.location.reload()
       }
    }
 }
