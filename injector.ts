@@ -32,9 +32,9 @@ const hotSocket = () => {
    socket.onerror = () => console.log("HOT DISCONNECTED")
    socket.onmessage = (e) => {
       const action = e.data
-      console.log("sse got action - ", action)
+      console.log("hotSocket recieved action -> ", action)
       if (action === "refreshcss") {
-         console.log("refreshCSS()")
+         console.log("Refreshing CSS")
          const sheets = [].slice.call(document.getElementsByTagName("link"))
          const head = document.getElementsByTagName("head")[0]
          for (let i = 0; i < sheets.length; ++i) {
