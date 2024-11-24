@@ -105,10 +105,6 @@ a bundle.js file,\
 a src folder\
 and, a main.ts file in the src folder
 
-|     ![minimum](hot-test.png)      |
-| :-------------------------------: |
-| _Minimum HotServe Client project_ |
-
 Note the `/// <reference lib="dom" />` at the top of `/src/main.ts`,\
 This allows you to write client-side deno-typescript without vscode complaints.
 

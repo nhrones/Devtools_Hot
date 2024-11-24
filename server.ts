@@ -1,6 +1,7 @@
+// deno-lint-ignore-file no-explicit-any
 import { debounce, join, openWebsite, serveFile } from './deps.ts'
 import * as cfg from './config.ts'
-import { buildIt } from './deps.ts'
+import { buildIt } from './build.ts'
 import { inject } from './injector.ts'
 
 const { DEV } = cfg
@@ -99,9 +100,9 @@ const handleFileChange = debounce(
       // src changed? -- build and bundle
       if (path.includes('src')) {
          if (DEV) console.log('esBuild Started!')
-         buildIt(cfg).then(() => {
+            buildIt(cfg).then(() => {
             if (DEV) console.log('Built bundle.js!')
-         }).catch((err) => {
+         }).catch((err: any) => {
             console.info('build err - ', err)
          })
       }
@@ -128,7 +129,7 @@ if (DEV) console.log('Initial build started!');
 buildIt(cfg).then(() => {
    if (DEV) console.log('Built bundle.js!')
 }).catch((err: unknown) => {
-   if (DEV) console.info('build err - ', err)
+   if (DEV) console.info('=====ERROR====: ', err)
 })
 
 // finally, we watch and handle any file change events
