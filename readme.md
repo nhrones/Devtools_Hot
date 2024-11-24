@@ -79,7 +79,7 @@ You can edit this config json to customise hot for this project.
          "./src/main.ts"
       ],
       "Minify": false,
-      "Out": "dist",
+      "OutPath": "dist",
       "Port": 80,
       "Serve": "dist",
       "Watch": [

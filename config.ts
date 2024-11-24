@@ -11,7 +11,7 @@ Commandline args:
 -h or ? = this help
 
 /src/dev.json - build:
-Out: string - the folder to place the bundle in (defaults to 'dist')
+OutPath: string - the folder to place the bundle in (defaults to 'dist')
 Entry: string[] - default = ["./src/main.ts"]
 Watch: string - the folder to watch for change
 Minify: boolean - true or false (defaults to false)`
@@ -25,7 +25,7 @@ const requiredCfg = {
    "DEV": true,
    "Entry": ["./src/main.ts"] ,  // an array of entry files to start esBuild from
    "Minify": false,              // minify the esbuild bundle?
-   "Out": "dist",                // the folder to place esBuild bundle.js in 
+   "OutPath": "dist",                // the folder to place esBuild bundle.js in 
    "Port": 80,                   // the local port to serve from
    "Serve": "dist",              // the folder to serve index.html from 
    "Watch": ["src", "dist"],     // Array of folders to watch for changes in.
@@ -40,7 +40,7 @@ const cfg = getConfig("hot", Deno.args, requiredCfg)
 export const DEV = cfg.DEV ?? false
 export const Entry = cfg.Entry ?? ['./src/main.ts']
 export const Minify = cfg.Minify ?? false
-export const Out = (cfg.Out && cfg.Out.length > 0) ? `./${cfg.Out}/bundle.js` : './bundle.js'
+export const OutPath = (cfg.OutPath && cfg.OutPath.length > 0) ? `./${cfg.OutPath}/bundle.js` : './bundle.js'
 export const Port = cfg.Port ?? 80
 export const ServeFrom = cfg.Serve ?? ""
 export const Watch = cfg.Watch ?? ["src", "dist"]
