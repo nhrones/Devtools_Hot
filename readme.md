@@ -48,7 +48,7 @@ See the example app in the `./dist` folder
 ## Usage
 To install a local copy, enter:
 ```
-deno install -n hot -A --unstable https://raw.githubusercontent.com/nhrones/Utilities/main/Hot/server.ts 
+deno install -n hot --global -Arf https://raw.githubusercontent.com/nhrones/Devtools_Hot/refs/heads/main/server.ts
 ```  
 Then, in a terminal in the root of your project, just enter `hot` to run this service. If the client code is not in the root folder, enter the folder name as the first cammand line arg; in this case you'll enter -- `hot example`.
 
