@@ -21,12 +21,13 @@ Minify: boolean - true or false (defaults to false)`
 
 // initial default configuration for this app
 const requiredCfg = {
+   "BundleName": "bundle.js",    // the name of the esBundle file
    "DEV": true,
    "Entry": ["./src/main.ts"] ,  // an array of entry files to start esBuild from
-   "Minify": false,               // minify the esbuild bundle?
-   "Out": "dist",              // the folder to place esBuild bundle.js in 
+   "Minify": false,              // minify the esbuild bundle?
+   "Out": "dist",                // the folder to place esBuild bundle.js in 
    "Port": 80,                   // the local port to serve from
-   "Serve": "dist",                // the folder to serve index.html from 
+   "Serve": "dist",              // the folder to serve index.html from 
    "Watch": ["src", "dist"],     // Array of folders to watch for changes in.
 } satisfies Config
 

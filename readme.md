@@ -73,6 +73,7 @@ You can edit this config json to customise hot for this project.
 ```json
 {
    "hot": {
+      "BundleName": "bundle.js",
       "DEV": true,
       "Entry": [
          "./src/main.ts"
