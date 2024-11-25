@@ -1,6 +1,5 @@
-import type { Config } from "jsr:@ndh/config@1.0.0";
-import * as esBuild from "https://deno.land/x/esbuild@v0.24.0/mod.js";
-import {denoPlugins} from "https://deno.land/x/esbuild_deno_loader@0.9.0/mod.ts";
+import type { Config } from "./deps.ts";
+import { build, stop, denoPlugins} from "./deps.ts"; 
 
 /** 
  * builds and bundles an entrypoint into a single ESM output. 
@@ -13,8 +12,7 @@ export async function buildIt(cfg: Config) {
    if (cfg.DEV) {
       console.log(`Bundling ${cfg.Entry} to ${cfg.OutPath} - minified = ${cfg.Minify}`)
    }
-   await esBuild.build({
-      // @ts-ignore: outdated types
+   await build({
       plugins: [...denoPlugins()],
       entryPoints: cfg.Entry,
       outfile: cfg.OutPath,
@@ -24,5 +22,5 @@ export async function buildIt(cfg: Config) {
       banner: { js: '// deno-lint-ignore-file' },
       format: "esm"
    }).catch((e: unknown) => console.info(e));
-   esBuild.stop();
+   stop();
 }
