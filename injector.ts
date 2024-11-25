@@ -14,7 +14,7 @@ export const inject = async (fullPath: string) => {
       // just replace this tag with our script tag content
       const newBody = indexString.replace('</body>', `
    <script type=module id="hot">
-const hotSocket = ${hotSocket.toString()}
+const hotSocket = ${hotSocket}
 hotSocket()
    </script>
    </body>`); // we've replaced the body end tag 
@@ -24,9 +24,7 @@ hotSocket()
       return indexString
    }
 }
-
-/** This is Hot's socket-client code to be injected */
-const hotSocket = () => {
+const hotSocket =` () => {
    console.log("HOT CONNECTING")
    const socket = new WebSocket(location.origin.replace("http", "ws"))
    socket.onopen = () => console.log("HOT CONNECTED")
@@ -40,7 +38,6 @@ const hotSocket = () => {
          const head = document.getElementsByTagName("head")[0]
          for (let i = 0; i < sheets.length; ++i) {
             const elem = sheets[i]
-            //@ts-ignore js code
             const parent = elem.parentElement || head
             parent.removeChild(elem)
             parent.appendChild(elem)
@@ -50,5 +47,32 @@ const hotSocket = () => {
          globalThis.location.reload()
       }
    }
-}
+}`
+
+
+/** This is Hot's socket-client code to be injected */
+// const hotSocket = () => {
+//    console.log("HOT CONNECTING")
+//    const socket = new WebSocket(location.origin.replace("http", "ws"))
+//    socket.onopen = () => console.log("HOT CONNECTED")
+//    socket.onerror = () => console.log("HOT DISCONNECTED")
+//    socket.onmessage = (e) => {
+//       const action = e.data
+//       console.log("hotSocket recieved action -> ", action)
+//       if (action === "refreshcss") {
+//          console.log("Refreshing CSS")
+//          const sheets = [].slice.call(document.getElementsByTagName("link"))
+//          const head = document.getElementsByTagName("head")[0]
+//          for (let i = 0; i < sheets.length; ++i) {
+//             const elem = sheets[i]
+//             const parent = elem.parentElement || head
+//             parent.removeChild(elem)
+//             parent.appendChild(elem)
+//          }
+//       } else if (action === "reload") {
+//          console.log("Reload requested! ")
+//          globalThis.location.reload()
+//       }
+//    }
+// }
 
