@@ -1,0 +1,15 @@
+{
+   "name": "@ndh/hot",
+   "version": "1.0.0",
+   "description": "A Deno dev server that auto opens the browser, then auto builds/bundles, and auto-refresh the browser.",
+   "exports": "./mod.ts",
+   "license": "MIT",
+   "publish": {
+      "include": [
+         "config.ts",
+         "deps.ts",
+         "mod.ts",
+         "readme.md"
+      ]
+   }
+}
