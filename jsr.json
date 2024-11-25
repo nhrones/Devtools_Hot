@@ -8,7 +8,7 @@
       "include": [
          "config.ts",
          "deps.ts",
-         "injector",
+         "injector.ts",
          "server.ts",
          "readme.md"
       ]
