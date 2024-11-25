@@ -1,3 +1,4 @@
+/// <reference lib="dom" />
 /**
  * This function retrieves raw text from index.html.  
  * It then replace the body-end-tag </body> tag with our 
