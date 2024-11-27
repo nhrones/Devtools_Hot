@@ -12,6 +12,11 @@ Any saved changes to the typescript code will trigger both a build and bundle.\
 The `bundle` action will automatically trigger a browser refresh.\
 Stylesheet changes refresh only the styles without restarting the bundle.
 
+## An example project built with Hot-Serve: 
+https://nhrones.github.io/Hot_BuenoCache/    
+Click the see-the-code link at bottom to open the Github repo.
+Open the repo and checkout the **_/src/_** and **_/dist/bundle.js/_**.
+
 ## Requirements
 
 This Hot-Serve service requires the following:
@@ -28,10 +33,6 @@ An index.html file with the following:
 
 - for bundling with esbuild, a configuration must be included
 
-## A good example Hot app is: 
-https://github.com/nhrones/Hot_BuenoCache
-
-Checkout **_/src/_** and **_/dist/bundle.js/_** there.
 
 ## Code injection (injector.ts)
 
