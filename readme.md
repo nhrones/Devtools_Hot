@@ -28,7 +28,8 @@ An index.html file with the following:
 
 - for bundling with esbuild, a configuration must be included
 
-## A good example hot app is: https://github.com/nhrones/BuenoCache-JS
+## A good example Hot app is: 
+https://github.com/nhrones/Hot_BuenoCache
 
 Checkout **_/src/_** and **_/dist/bundle.js/_** there.
 
