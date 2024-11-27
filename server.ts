@@ -98,7 +98,7 @@ const handleFileChange = debounce(
       if (DEV) console.log(`Handling file change: [${kind}]    ${path}`)
 
       // src changed? -- build and bundle
-      if (path.includes('src')) {
+      if (path.includes(cfg.Watch[0])) {
          if (DEV) console.log('esBuild Started!')
             buildIt(cfg).then(() => {
             if (DEV) console.log('Built bundle.js!')
