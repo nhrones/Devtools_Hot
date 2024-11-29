@@ -11,10 +11,8 @@ btn.onclick = () => {
 }
   
 /** on-screen logger */
-export const log = (what: string, whatElse = null, and = null) => {
+export const log = (what: string, ) => {
     let text = `${what.padEnd(30, '-')} `;
-    if (whatElse) text += `${whatElse} `;
-    if (and) text += `${and}`;
     text += new Date().toLocaleTimeString();
     logger.textContent = `${text}${'\n'}` + logger.textContent;
 };
