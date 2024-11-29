@@ -9,10 +9,8 @@ var btn = document.getElementById("btn");
 btn.onclick = () => {
   log(`Click count = ${cnt++}  `);
 };
-var log = /* @__PURE__ */ __name((what, whatElse = null, and = null) => {
+var log = /* @__PURE__ */ __name((what) => {
   let text = `${what.padEnd(30, "-")} `;
-  if (whatElse) text += `${whatElse} `;
-  if (and) text += `${and}`;
   text += (/* @__PURE__ */ new Date()).toLocaleTimeString();
   logger.textContent = `${text}${"\n"}` + logger.textContent;
 }, "log");
