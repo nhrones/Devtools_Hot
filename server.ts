@@ -48,7 +48,7 @@ Deno.serve({ port: cfg.Port },
       let isIndexHtml = false
       if (pathname.endsWith("/")) {
          isIndexHtml = true
-         pathname += "index.html";
+         pathname += cfg.Name  // "index.html";
       }
 
       // modify our path based on our index folder

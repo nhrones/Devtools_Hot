@@ -27,7 +27,8 @@ const requiredCfg = {
    "Minify": false,              // minify the esbuild bundle?
    "OutPath": "dist",                // the folder to place esBuild bundle.js in 
    "Port": 80,                   // the local port to serve from
-   "Serve": "dist",              // the folder to serve index.html from 
+   "Serve": "dist",
+   "HtmlName":"index.html",              // the folder to serve index.html from 
    "Watch": ["src", "dist"],     // Array of folders to watch for changes in.
 } satisfies Config
 
@@ -43,4 +44,5 @@ export const Minify = cfg.Minify ?? false
 export const OutPath = (cfg.OutPath && cfg.OutPath.length > 0) ? `./${cfg.OutPath}/bundle.js` : './bundle.js'
 export const Port = cfg.Port ?? 80
 export const ServeFrom = cfg.Serve ?? ""
+export const Name = cfg.HtmlName ?? "index.html"
 export const Watch = cfg.Watch ?? ["src", "dist"]
