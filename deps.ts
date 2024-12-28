@@ -6,6 +6,6 @@ export { debounce } from "jsr:@std/async@1.0.9";
 
 /** ============= exports @ndh  ============= */
 export * from "jsr:@ndh/browser@1.0.3";
-export * from "jsr:@ndh/build@1.0.0"
-export type { Config } from "jsr:@ndh/config@1.0.1";
-export { getConfig } from "jsr:@ndh/config@1.0.1";
+export * from "jsr:@ndh/build@1.0.5"
+export type { Config } from "jsr:@ndh/config@1.0.2";
+export { getConfig } from "jsr:@ndh/config@1.0.2";

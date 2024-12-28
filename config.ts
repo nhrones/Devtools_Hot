@@ -25,10 +25,11 @@ const requiredCfg = {
    "DEV": true,
    "Entry": ["./src/main.ts"] ,  // an array of entry files to start esBuild from
    "Minify": false,              // minify the esbuild bundle?
-   "OutPath": "dist",                // the folder to place esBuild bundle.js in 
+   "Bundle": true,               // esbuild bundle?
+   "OutPath": "dist",            // the folder to place esBuild bundle.js in 
    "Port": 80,                   // the local port to serve from
    "Serve": "dist",
-   "HtmlName":"index.html",              // the folder to serve index.html from 
+   "HtmlName":"index.html",      // the folder to serve index.html from 
    "Watch": ["src", "dist"],     // Array of folders to watch for changes in.
 } satisfies Config
 
