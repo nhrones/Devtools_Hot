@@ -58,6 +58,10 @@ To install a local copy, enter:
 
 ```
 deno install -n hot --global -Arf https://raw.githubusercontent.com/nhrones/Devtools_Hot/refs/heads/main/server.ts
+
+//or, from JSR:
+deno install -n hot --global -Arf https://jsr.io/@ndh/hot/1.0.4/server.ts
+
 ```
 
 Then, in a terminal in the root of your project, just enter `hot` to run this
