@@ -24,8 +24,7 @@ const requiredCfg = {
    "BundleName": "bundle.js",    // the name of the esBundle file
    "DEV": true,
    "Entry": ["./src/main.ts"] ,  // an array of entry files to start esBuild from
-   "Minify": false,              // minify the esbuild bundle?
-   "Bundle": true,               // esbuild bundle?
+   "Minify": false,              // esbuild bundle?
    "OutPath": "dist",            // the folder to place esBuild bundle.js in 
    "Port": 80,                   // the local port to serve from
    "Serve": "dist",

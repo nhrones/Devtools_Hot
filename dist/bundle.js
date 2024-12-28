@@ -2,7 +2,12 @@
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
+// src/a.ts
+var A = "A";
+console.log(A);
+
 // src/main.ts
+console.log(A);
 var cnt = 1;
 var logger = document.getElementById("logger");
 var btn = document.getElementById("btn");

@@ -1,5 +1,9 @@
 /// <reference lib="dom" />
-             
+
+import {A} from './a.ts'   
+
+console.log(A)
+
 /** our counter  */  
 let cnt = 1;
 
