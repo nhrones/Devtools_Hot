@@ -13,8 +13,8 @@ The `bundle` action will automatically trigger a browser refresh.\
 Stylesheet changes refresh only the styles without restarting the bundle.
 
 ## An example project built with Hot-Serve: 
-https://nhrones.github.io/Hot_BuenoCache/    
-Click the see-the-code link at bottom to open the Github repo.
+https://nhrones.github.io/Clock/   
+Click the see-the-code link at the bottom-left to open the Github repo.
 Open the repo and checkout the **_/src/_** and **_/dist/bundle.js/_**.
 
 ## Requirements
