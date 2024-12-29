@@ -2,7 +2,15 @@
    font-family: 'Courier New', Courier, monospace;
    font-size: x-large;
 }
-
+body{
+   background-color: black;
+   color:antiquewhite;
+}
+button {
+   font-family: 'Courier New', Courier, monospace;
+   background-color: black;
+   color: rgb(136, 219, 148);
+}
 h1 {
    font-family: 'Courier New', Courier, monospace;
    color: red;
