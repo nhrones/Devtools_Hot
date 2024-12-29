@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+   {
+      "type": "shell",
+      "command": "hot",
+      "label": "HOT"
+   },
+   {
+      "type": "deno",
+      "command": "run",
+      "args":["-A", "server.ts"],
+      "problemMatcher": [
+         "$deno"
+      ],
+      "label": "deno: run"
+   }
+]
+}
