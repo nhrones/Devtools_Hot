@@ -14,7 +14,7 @@ Stylesheet changes refresh only the styles without restarting the bundle.
 
 ## An example project built with Hot-Serve: 
 https://nhrones.github.io/Clock/   
-Click the see-the-code link at the bottom-left to open the Github repo.
+Click **_see-the-code_** link at the bottom-left to open the Github repo.   
 Open the repo and checkout the **_/src/_** and **_/dist/bundle.js/_**.
 
 ## Requirements
@@ -50,18 +50,18 @@ Anything that exists below the body-end-tag will be displaced
 below this injected script.
 ```
 
-See the example app in the `./dist` folder
+See the example app in the `./src` and `./dist` folders.   
 
 ## Usage
 I no longer recommend using a locally installed copy of Hot.   
 
 To add Hot, to a Deno project, add this task entry to deno.json:
 ```json
-   "hot": "deno run --allow-all --no-config https://jsr.io/@ndh/hot/1.0.7/server.ts"
+   "hot": "deno run --allow-all https://jsr.io/@ndh/hot/1.0.7/server.ts"
 ```
 To run Hot in a project with a package.json, add this script entry:
 ```json
-   "hot": "deno run --allow-all --no-config https://jsr.io/@ndh/hot/1.0.7/server.ts"
+   "hot": "deno run --allow-all https://jsr.io/@ndh/hot/1.0.7/server.ts"
 ```
 Or, if using VSCode, add the following entry to _./.vscode/tasks.json_    
 This is my prefered method as it becomes the default VSCode build task.     
@@ -96,7 +96,7 @@ You can edit this config json to customise hot for each project.
       "Minify": false,
       "OutPath": "dist",
       "Port": 80,
-      "Serve": ".",
+      "Serve": "dist",
       "Watch": [
          "src",
          "dist"
@@ -110,21 +110,22 @@ Watch, and Serve options. You can find these setting in:
 https://github.com/nhrones/Devtools_Config/blob/main/readme.md
 
 This default expects a ./src/main.ts file, a /dist/ folder with   
-a bundle.js file in it.  It will bundle to /dist/, and serve the index.html from root.
+an index.html and bundle.js file in it.    
+It will bundle to `./dist/`, and serve the `index.html` from `./dist/`.
 
 ## Try it:
 In a clean project folder: 
-Add an index.html file in the root. This allows running from Github Pages   
+  - add a /dist/ folder 
+  - add an index.html file in /dist/  
+  - add a bundle.js file in /dist/ and reference it in index.html,
+  - add a style.css file in /dist/ and reference it in index.html,   
 
-add a /dist/ folder   
-add a bundle.js file in /dist/ and reference it in index.html,
-add a style.css file in /dist/ and reference it in index.html,   
+next:
+  - add a ./src/ folder
+  - add a main.ts file in the ./src/ folder   
+  - add `/// <reference lib="dom" />` at the top of main.ts. This allows you to write client-side typescript without vscode complaints.   
 
-add a src folder
-add a main.ts file in the src folder   
-add `/// <reference lib="dom" />` at the top of main.ts,   
-This allows you to write client-side typescript without vscode complaints.   
-To run this, enter the following:
+To run the above, enter the following:
 ``` 
 deno run --allow-all --no-config https://jsr.io/@ndh/hot/1.0.7/server.ts .
 ```
