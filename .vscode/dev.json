@@ -14,5 +14,14 @@
          "src",
          "dist"
       ]
+   },
+   "build": {
+      "BundleName": "bundle.js",
+      "Entry": [
+         "./src/main.ts"
+      ],
+      "Minify": false,
+      "Bundle": true,
+      "OutPath": "dist"
    }
 }

@@ -4,7 +4,12 @@
       {
          "label": "HOT",
          "type": "shell",
-         "command": "hot"
+         "command": "deno run --allow-all --no-config https://jsr.io/@ndh/hot/1.0.6/server.ts",
+         "problemMatcher": [],
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         }
       },
       {
          "label": "RUN-LOCAL",
