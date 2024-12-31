@@ -57,11 +57,11 @@ I no longer recommend using a locally installed copy of Hot.
 
 To add Hot, to a Deno project, add this task entry to deno.json:
 ```json
-   "hot": "deno run --allow-all https://jsr.io/@ndh/hot/1.0.8/server.ts"
+   "hot": "deno run --allow-all https://jsr.io/@ndh/hot/1.0.9/server.ts"
 ```
 To run Hot in a project with a package.json, add this script entry:
 ```json
-   "hot": "deno run --allow-all https://jsr.io/@ndh/hot/1.0.8/server.ts"
+   "hot": "deno run --allow-all https://jsr.io/@ndh/hot/1.0.9/server.ts"
 ```
 Or, if using VSCode, add the following entry to _./.vscode/tasks.json_    
 This is my prefered method as it becomes the default VSCode build task.     
@@ -70,7 +70,7 @@ It can be started by entering the VSCode _build_ shortcut **_ctrl+shift+b _**
       {
          "label": "HOT",
          "type": "shell",
-         "command": "deno run --allow-all --no-config https://jsr.io/@ndh/hot/1.0.8/server.ts .",
+         "command": "deno run --allow-all --no-config https://jsr.io/@ndh/hot/1.0.9/server.ts .",
          "problemMatcher": [],
          "group": {
             "kind": "build",
