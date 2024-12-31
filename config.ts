@@ -35,7 +35,7 @@ const requiredCfg = {
 
 // gets an existing configuration from ./.vscode/dev.json
 // if not found, just build it from requiredCfg above
-const cfg = getConfig("HOT", "1.0.18", Deno.args, requiredCfg)
+const cfg = getConfig("HOT", "1.0.19", Deno.args, requiredCfg)
 
 // export all configuration constants
 export const DEV = cfg.DEV ?? false
