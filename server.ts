@@ -1,7 +1,8 @@
 // deno-lint-ignore-file no-explicit-any
-import { debounce, join, openWebsite, serveFile } from './deps.ts'
+import { debounce, join, serveFile } from './deps.ts'
 import * as cfg from './config.ts'
-import { buildIt } from "./deps.ts" //'./build.ts'
+import {  openWebsite } from "./browser.ts"
+import { buildIt } from "./deps.ts"
 import { inject } from './injector.ts'
 
 const { DEV } = cfg
