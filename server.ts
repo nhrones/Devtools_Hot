@@ -2,7 +2,7 @@
 import { debounce, join, serveFile } from './deps.ts'
 import * as cfg from './config.ts'
 import {  openWebsite } from "./browser.ts"
-import { buildIt } from "./deps.ts"
+import { buildIt } from "./build.ts"
 import { inject } from './injector.ts'
 
 const { DEV } = cfg

@@ -1,27 +1,49 @@
 {
+   // See https://go.microsoft.com/fwlink/?LinkId=733558
+   // for the documentation about the tasks.json format
    "version": "2.0.0",
-   "tasks": [ 
-      {
-         "label": "HOT",
-         "type": "shell",
-         "command": "deno run --allow-all --no-config https://jsr.io/@ndh/hot/1.0.8/server.ts",
-         "problemMatcher": [],
-         "group": {
-            "kind": "build",
-            "isDefault": true
-         }
-      },
-      {
-         "label": "RUN-LOCAL",
-         "type": "deno",
-         "command": "run",
-         "args": [
-            "-A",
-            "server.ts"
-         ],
-         "problemMatcher": [
-            "$deno"
-         ]
+   "tasks": [
+   {
+      "label": "HOT",
+      "type": "shell",
+      "command": "deno run --allow-all --no-config https://jsr.io/@ndh/hot/1.0.8/server.ts",
+      "problemMatcher": [],
+      "group": {
+         "kind": "build",
+         "isDefault": true
       }
-   ]
-}
+   },
+   {
+      "label": "RUN-LOCAL",
+      "type": "deno",
+      "command": "run",
+      "args": [
+         "-A",
+         "server.ts"
+      ],
+      "problemMatcher": [
+         "$deno"
+      ]
+   },
+   {
+      "label": "HOT",
+      "type": "shell",
+      "command": "deno run --allow-all --no-config https://jsr.io/@ndh/hot/1.0.6/server.ts",
+      "problemMatcher": [],
+      "group": {
+         "kind": "build",
+         "isDefault": true
+      }
+   },
+   {
+      "label": "HOT",
+      "type": "shell",
+      "command": "deno run --allow-all --no-config https://jsr.io/@ndh/hot/1.0.6/server.ts",
+      "problemMatcher": [],
+      "group": {
+         "kind": "build",
+         "isDefault": true
+      }
+   }
+]       
+   }
