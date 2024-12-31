@@ -6,6 +6,7 @@
    "license": "MIT",
    "publish": {
       "include": [
+         "browser.ts",
          "config.ts",
          "deps.ts",
          "injector.ts",
