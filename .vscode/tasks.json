@@ -4,7 +4,7 @@
       {
          "label": "HOT",
          "type": "shell",
-         "command": "deno run --allow-all --no-config https://jsr.io/@ndh/hot/1.0.6/server.ts",
+         "command": "deno run --allow-all --no-config https://jsr.io/@ndh/hot/1.0.8/server.ts",
          "problemMatcher": [],
          "group": {
             "kind": "build",
