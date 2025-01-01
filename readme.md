@@ -28,12 +28,6 @@ An index.html file with the following:
 - must reference a `bundle.js` file as type module\
   \<script type=module src="bundle.js"\>\</script\>
 
-- should have one or more stylesheets\
-  \<link rel="stylesheet" href="./style.css"\>
-
-- for bundling with esbuild, a configuration must be included
-
-
 ## Code injection (injector.ts)
 
 The hot-browser-refresh is accomplished by emdedding a temporary\
@@ -57,11 +51,13 @@ I no longer recommend using a locally installed copy of Hot.
 
 To add Hot, to a Deno project, add this task entry to deno.json:
 ```json
-   "hot": "deno run --allow-all https://jsr.io/@ndh/hot/1.1.0/server.ts"
+   // replace x.x.x below with the current JSR ndh/hot version
+   "hot": "deno run --allow-all https://jsr.io/@ndh/hot/x.x.x/server.ts"
 ```
 To run Hot in a project with a package.json, add this script entry:
 ```json
-   "hot": "deno run --allow-all https://jsr.io/@ndh/hot/1.1.0/server.ts"
+   // replace x.x.x below with the current JSR ndh/hot version
+   "hot": "deno run --allow-all https://jsr.io/@ndh/hot/x.x.x/server.ts"
 ```
 Or, if using VSCode, add the following entry to _./.vscode/tasks.json_    
 This is my prefered method as it becomes the default VSCode build task.     
@@ -69,8 +65,8 @@ It can be started by entering the VSCode _build_ shortcut **_ctrl+shift+b _**
 ```json
       {
          "label": "HOT",
-         "type": "shell",
-         "command": "deno run --allow-all --no-config https://jsr.io/@ndh/hot/1.1.0/server.ts .",
+         "type": "shell",  // replace x.x.x below with the current JSR ndh/hot version
+         "command": "deno run --allow-all --no-config https://jsr.io/@ndh/hot/x.x.x/server.ts .",
          "problemMatcher": [],
          "group": {
             "kind": "build",
@@ -126,8 +122,9 @@ next:
   - add `/// <reference lib="dom" />` at the top of main.ts. This allows you to write client-side typescript without vscode complaints.   
 
 To run the above, enter the following:
-``` 
-deno run --allow-all --no-config https://jsr.io/@ndh/hot/1.1.0/server.ts .
+```bash 
+# replace x.x.x below with the current JSR ndh/hot version
+deno run --allow-all --no-config https://jsr.io/@ndh/hot/x.x.x/server.ts .
 ```
 Try changing some code in main.ts, then save it. The browser tab should refresh.
 Try changing the h1 color in style.css, then save. The h1 color should change\
