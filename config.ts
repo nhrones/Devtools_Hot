@@ -1,6 +1,6 @@
 import { Config, getConfig } from './deps.ts'
-import { version } from "./jsr.json" with { type: "json" };
-
+import JSR from "./jsr.json" with { type: "json" };
+export const VER = JSR.version
 
 // If the first CLI argument (args[0]) = -h or ?
 // show help text then just exit
@@ -36,7 +36,7 @@ const requiredCfg = {
 
 // gets an existing configuration from ./.vscode/dev.json
 // if not found, just build it from requiredCfg above
-const cfg = getConfig("HOT", version, Deno.args, requiredCfg)
+const cfg = getConfig("HOT", VER, Deno.args, requiredCfg)
 
 // export all configuration constants
 export const DEV = cfg.DEV ?? false
