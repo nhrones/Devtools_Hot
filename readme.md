@@ -13,8 +13,8 @@ The `bundle` action will automatically trigger a browser refresh.\
 Stylesheet changes refresh only the styles without restarting the bundle.
 
 ## An example project built with Hot-Serve: 
-https://nhrones.github.io/Hot_BuenoCache/    
-Click the see-the-code link at bottom to open the Github repo.
+https://nhrones.github.io/Clock/   
+Click **_see-the-code_** link at the bottom-left to open the Github repo.   
 Open the repo and checkout the **_/src/_** and **_/dist/bundle.js/_**.
 
 ## Requirements
@@ -27,12 +27,6 @@ An index.html file with the following:
 
 - must reference a `bundle.js` file as type module\
   \<script type=module src="bundle.js"\>\</script\>
-
-- should have one or more stylesheets\
-  \<link rel="stylesheet" href="./style.css"\>
-
-- for bundling with esbuild, a configuration must be included
-
 
 ## Code injection (injector.ts)
 
@@ -50,27 +44,42 @@ Anything that exists below the body-end-tag will be displaced
 below this injected script.
 ```
 
-See the example app in the `./dist` folder
+See the example app in the `./src` and `./dist` folders.   
 
 ## Usage
+I no longer recommend using a locally installed copy of Hot.   
 
-To install a local copy, enter:
-
+To add Hot, to a Deno project, add this task entry to deno.json:
+```json
+   // replace x.x.x below with the current JSR ndh/hot version
+   "hot": "deno run --allow-all https://jsr.io/@ndh/hot/x.x.x/server.ts"
 ```
-deno install -n hot --global -Arf https://raw.githubusercontent.com/nhrones/Devtools_Hot/refs/heads/main/server.ts
+To run Hot in a project with a package.json, add this script entry:
+```json
+   // replace x.x.x below with the current JSR ndh/hot version
+   "hot": "deno run --allow-all https://jsr.io/@ndh/hot/x.x.x/server.ts"
 ```
-
-Then, in a terminal in the root of your project, just enter `hot` to run this
-service. If the client code is not in the root folder, enter the folder name as
-the first cammand line arg; in this case you'll enter -- `hot dist`.
-
-Your browser will launch automatically, opening your web-app.
+Or, if using VSCode, add the following entry to _./.vscode/tasks.json_    
+This is my prefered method as it becomes the default VSCode build task.     
+It can be started by entering the VSCode _build_ shortcut **_ctrl+shift+b _**  
+```json
+      {
+         "label": "HOT",
+         "type": "shell",  // replace x.x.x below with the current JSR ndh/hot version
+         "command": "deno run --allow-all --no-config https://jsr.io/@ndh/hot/x.x.x/server.ts .",
+         "problemMatcher": [],
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         }
+      }
+```
 
 ## Important:
 
 Hot when first used in a project folder, will add a configuration json entry in
-**_./.vscode/dev.json_**.\
-You can edit this config json to customise hot for this project.
+**_./.vscode/dev.json_**.   
+You can edit this config json to customise hot for each project.
 
 ```json
 {
@@ -91,26 +100,32 @@ You can edit this config json to customise hot for this project.
    }
 }
 ```
-
-Hot will populate this config on first use (when one is not found). The above
-hot-config is the default. It deals mainly with esBuild, Watch, and Serve
-options. You can find these setting in:
+Hot will populate this config on first use (when one is not found).    
+The above hot-config is the default. It deals mainly with esBuild,    
+Watch, and Serve options. You can find these setting in:
 https://github.com/nhrones/Devtools_Config/blob/main/readme.md
 
-## Try it
+This default expects a ./src/main.ts file, a /dist/ folder with   
+an index.html and bundle.js file in it.    
+It will bundle to `./dist/`, and serve the `index.html` from `./dist/`.
 
-To run this service from Git!
+## Try it:
+In a clean project folder: 
+  - add a /dist/ folder 
+  - add an index.html file in /dist/  
+  - add a bundle.js file in /dist/ and reference it in index.html,
+  - add a style.css file in /dist/ and reference it in index.html,   
 
-In a folder that contains:\
-an index.html file,\
-a bundle.js file,\
-a src folder\
-and, a main.ts file in the src folder
+next:
+  - add a ./src/ folder
+  - add a main.ts file in the ./src/ folder   
+  - add `/// <reference lib="dom" />` at the top of main.ts. This allows you to write client-side typescript without vscode complaints.   
 
-Note the `/// <reference lib="dom" />` at the top of `/src/main.ts`,\
-This allows you to write client-side deno-typescript without vscode complaints.
-
-Try changing some code in main.ts, then save it. The browser tab should
-refresh.\
+To run the above, enter the following:
+```bash 
+# replace x.x.x below with the current JSR ndh/hot version
+deno run --allow-all --no-config https://jsr.io/@ndh/hot/x.x.x/server.ts .
+```
+Try changing some code in main.ts, then save it. The browser tab should refresh.
 Try changing the h1 color in style.css, then save. The h1 color should change\
 without restarting the app!
